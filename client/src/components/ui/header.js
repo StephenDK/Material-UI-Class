@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import { Typography } from "@mui/material";
+import Box from "@mui/material/Box"; // Import the Box component
 
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
@@ -35,7 +36,11 @@ export default function Header(props) {
           </Toolbar>
         </AppBar>
       </ElevationScroll>
-      <div className="Heloo" style={{ marginBottom: "4rem" }} />
+      <Box
+        sx={{
+          marginTop: { xs: 10, sm: 10, md: 10 }, // Adjust margins for different screen widths
+        }}
+      />
     </Fragment>
   );
 }
