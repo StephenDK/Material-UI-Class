@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
+import { Typography } from "@mui/material";
+
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 
 function ElevationScroll(props) {
@@ -19,14 +21,21 @@ function ElevationScroll(props) {
 
 export default function Header(props) {
   return (
-    <ElevationScroll>
-      {/* By default, the Appbar uses position fixed. */}
-      <AppBar position="fixed">
-        {/* The toolbar allows for stacking items horizontally 
-            (It will stack vertically by default without the toolbar) 
-        */}
-        <Toolbar>Arc Development</Toolbar>
-      </AppBar>
-    </ElevationScroll>
+    <Fragment>
+      <ElevationScroll>
+        {/* By default, the Appbar uses position fixed. 
+            The color prop set to primary uses the themeProvider and the colors we set
+          */}
+        <AppBar position="fixed" color="primary">
+          {/* The toolbar allows for stacking items horizontally 
+                (It will stack vertically by default without the toolbar) 
+            */}
+          <Toolbar>
+            <Typography variant="h3">Arc Development</Typography>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+      <div className="Heloo" style={{ marginBottom: "4rem" }} />
+    </Fragment>
   );
 }
